@@ -36,18 +36,36 @@ div.container
               td ?
           tr
             th Major
-            td= r2.major
+            if(player_id)
+              td= r2.major
+            else
+              td ?
           tr
             th Games Played
-            td= r3
+            if(player_id)
+              td= r3
+            else
+              td
           tr
-            td= "Passing Yards:"+r2.passing_yards
-            td= "Avg. Passing Yards: " + (r2.passing_yards / r3).toFixed(2)
+            if(player_id)
+              td= "Passing Yards:"+r2.passing_yards
+              td= "Avg. Passing Yards: " + (r2.passing_yards / r3).toFixed(2)
+            else
+              td ?
+              td ?
           tr
-            td= "Rushing Yards:"+r2.rushing_yards
-            td= "Avg. Rushing Yards: "+ (r2.rushing_yards / r3).toFixed(2)
+            if(player_id)
+              td= "Rushing Yards:"+r2.rushing_yards
+              td= "Avg. Rushing Yards: "+ (r2.rushing_yards / r3).toFixed(2)
+            else
+              td ?
+              td ?
           tr
-            td= "Receiving Yards:"+r2.receiving_yards
-            td= "Avg. Receiving Yards: "+(r2.receiving_yards / r3).toFixed(2)
+          if(player_id)
+              td= "Receiving Yards:"+r2.receiving_yards
+              td= "Avg. Receiving Yards: "+(r2.receiving_yards / r3).toFixed(2)
+          else
+              td ?
+              td ?
 
 include ../partials/footer.pug
